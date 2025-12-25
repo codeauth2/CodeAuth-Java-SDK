@@ -79,7 +79,7 @@ IO.println(result.signin_url);
 ### Signin / Social Verify
 This is the next step after the user signs in with their social account. This request checks the authorization code given by the social media company in order to create a session token.
 ```java
-var result = CodeAuth.SignInSocialVerify("<social type>", "<authorization code>");
+var result = CodeAuth.SignInSocialVerify("<social type>", "<code>");
 switch (result.error)
 {
 	case "bad_json": IO.println("bad_json"); break;
@@ -87,7 +87,7 @@ switch (result.error)
 	case "bad_ip_address": IO.println("bad_ip_address"); break;
 	case "rate_limit_reached": IO.println("rate_limit_reached"); break;
 	case "bad_social_type": IO.println("bad_social_type"); break;
-	case "bad_authorization_code": IO.println("bad_authorization_code"); break;
+	case "bad_code": IO.println("bad_authorization_code"); break;
 	case "internal_error": IO.println("internal_error"); break;
 	case "connection_error": IO.println("connection_error"); break; //sdk failed to connect to api server
 }
